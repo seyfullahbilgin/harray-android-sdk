@@ -112,8 +112,8 @@ public class NotificationCompatBuilder {
             notificationIntent.putExtra(entry.getKey(), entry.getValue());
         }
         PendingIntent contentIntent;
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
-            contentIntent = PendingIntent.getActivity(applicationContext, 0, notificationIntent, (PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE));
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.S){
+            contentIntent = PendingIntent.getActivity(applicationContext, 0, notificationIntent, (PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_MUTABLE));
         }
         else{
             contentIntent = PendingIntent.getActivity(applicationContext, 0, notificationIntent, (PendingIntent.FLAG_UPDATE_CURRENT));
